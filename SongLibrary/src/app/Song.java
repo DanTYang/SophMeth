@@ -30,7 +30,7 @@ public class Song {
         BufferedReader csvReader = new BufferedReader(new FileReader("songDatabase"));
         String row;
         while ((row = csvReader.readLine()) != null) {
-            String[] data = row.split("\\|");
+            String[] data = row.split("\\|", -1);
             if(Integer.parseInt(data[0]) == key){
                 return new Song(Integer.parseInt(data[0]), data[1], data[2], data[3], data[4]);
             }
